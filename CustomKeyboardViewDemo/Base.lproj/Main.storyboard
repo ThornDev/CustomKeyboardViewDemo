@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,61 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RIb-wp-mBw">
+                                <rect key="frame" x="233" y="54" width="135" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="ms3-o7-sQ4"/>
+                                    <constraint firstAttribute="width" constant="135" id="sd0-bz-Fwu"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="D4n-w3-NjS"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qhw-qQ-mIR">
+                                <rect key="frame" x="233" y="119" width="135" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Jhx-o4-nzc"/>
+                                    <constraint firstAttribute="width" constant="135" id="jBq-UI-OXQ"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="17B-X4-5Xr"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ThornDev自定义数字键盘" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yed-bk-aFq">
+                                <rect key="frame" x="203" y="0.0" width="195" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="5op-cX-Cgv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yed-bk-aFq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EgO-nq-W5t"/>
+                            <constraint firstItem="Qhw-qQ-mIR" firstAttribute="top" secondItem="RIb-wp-mBw" secondAttribute="bottom" constant="35" id="L5X-1Z-dZW"/>
+                            <constraint firstItem="RIb-wp-mBw" firstAttribute="top" secondItem="yed-bk-aFq" secondAttribute="bottom" constant="7" id="R9g-lE-UIN"/>
+                            <constraint firstItem="Qhw-qQ-mIR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="a1i-ql-g3Q"/>
+                            <constraint firstItem="RIb-wp-mBw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uv4-e4-868"/>
+                            <constraint firstItem="yed-bk-aFq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="vsn-6E-0Px"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textFieldDown" destination="Qhw-qQ-mIR" id="EhL-l9-Bma"/>
+                        <outlet property="textFieldUp" destination="RIb-wp-mBw" id="kiI-N0-Pns"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="371" y="418"/>
         </scene>
     </scenes>
 </document>
